@@ -30,8 +30,7 @@ public class Hunger_Games_Sim {
     public static final int NUM_DISTRICTS = 12;
     public static final int TRIBUTES_PER_DISTRICT = 3;
     public static final int TIME_INTERVAL = 3;
-    //public static final double DEATH_EVENT_PROB = 0.25;
-    public static final double DEATH_EVENT_PROB = 0;
+    public static final double DEATH_EVENT_PROB = 0.25;
     private static final TreeMap<GamePeriod.Phase, ArrayList<Event>> eventMap = new TreeMap<>();
     private static final TreeMap<GamePeriod.Phase, ArrayList<Event>> lethalEventMap = new TreeMap<>();
     private static final ArrayList<Tribute> allTributes = new ArrayList<>();
@@ -52,7 +51,7 @@ public class Hunger_Games_Sim {
         
         Random rand = new Random();
         Event event = null;
-        for (int k = 0; k < 10; ++k) {
+        while (livingTributes.size() > 1) {
             gp.dump();
             ArrayList<Tribute> tributesToAct = new ArrayList<>(livingTributes);
             while (!tributesToAct.isEmpty()) {
@@ -70,9 +69,27 @@ public class Hunger_Games_Sim {
                     tributesInvolved.add(tributesToAct.remove(tribIdx));
                 }
                 System.out.println(event.execute(tributesInvolved));
+                if (event instanceof Event_Lethal) {
+                    Event_Lethal lethalEvent = (Event_Lethal) event;
+                    ArrayList<Integer> losers = lethalEvent.getLosers();
+                    for (int j = 0; j < losers.size(); ++j) {
+                        Tribute killed = tributesInvolved.get(losers.get(j)-1);
+                        int i = 0;
+                        int size = livingTributes.size();
+                        while (!livingTributes.get(i).name.equals(killed.name) && i < size) ++i;
+                        assert (i < size);
+                        deadTributes.add(livingTributes.remove(i));
+                    }
+                }
             }
-            gp.update(10);
+            gp.update(TIME_INTERVAL);
             System.out.println();
+        }
+        if (livingTributes.size() == 1) {
+            System.out.println("The winner of this Hunger Games is "
+                            + livingTributes.get(0).name);
+        } else {
+            System.out.println("There are no winners. :(");
         }
     }
     
@@ -100,10 +117,10 @@ public class Hunger_Games_Sim {
         while (sc.hasNext()) {
             // Fetch event id
             String str = sc.next();
-            int idx1 = 0, idx2 = 0;
+            int idx1 = 0;
             char c = str.charAt(idx1);
             while (c > '9' || c < '0') c = str.charAt(++idx1);
-            idx2 = idx1 + 1;
+            int idx2 = idx1 + 1;
             c = str.charAt(idx2);
             while (c <= '9' && c >= '0') c = str.charAt(++idx2);
             int id = Integer.parseUnsignedInt(str.substring(idx1, idx2));

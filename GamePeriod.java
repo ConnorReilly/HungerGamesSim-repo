@@ -68,12 +68,16 @@ public final class GamePeriod {
         else if (hour24 > 12) hour12 = hour24 - 12;
         else hour12 = hour24;
         GamePeriod.Phase phaseTmp;
+        String gameStart;
         if (phase == Phase.START) {
             phaseTmp = (time < 19 && time >= 7) ? Phase.DAY:Phase.NIGHT;
-        } else phaseTmp = phase;
+            gameStart = " (GAME START)";
+        } else { 
+            phaseTmp = phase; gameStart = "";
+        }
         
         System.out.println(hour12 + ":00" 
                     + ((hour24 < 12) ? "am":"pm") + " "
-                    + phaseTmp + " " + dayNum);
+                    + phaseTmp + " " + dayNum + gameStart);
     }
 }

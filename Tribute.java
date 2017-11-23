@@ -35,7 +35,7 @@ public class Tribute {
     public GamePeriod getDiedOn() { return diedOn; }
     
     public void setDead(boolean isDead) { this.isDead = isDead; }
-    public void giveKill(String name) { kills.add(name); }
+    public void addKill(String name) { kills.add(name); }
     public void addKiller(String name) { killedBy.add(name); }
     public void setDiedOn(GamePeriod period)
     {

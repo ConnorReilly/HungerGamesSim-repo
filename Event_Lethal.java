@@ -34,12 +34,12 @@ public class Event_Lethal extends Event {
                     + ", Phase " + phase.toString() + ", Lethal.");
         }
         for (int loserNum : losers) {
-            tributes.get(loserNum).setDead(true);
+            tributes.get(loserNum-1).setDead(true);
         }
         for (int winnerNum : winners) {
             for (int loserNum : losers) {
-                Tribute loser = tributes.get(loserNum);
-                tributes.get(winnerNum).giveKill(loser.name);
+                Tribute loser = tributes.get(loserNum-1);
+                tributes.get(winnerNum-1).addKill(loser.name);
             }
         }
         return super.execute(tributes);
