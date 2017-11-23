@@ -33,9 +33,7 @@ public class Event_Lethal extends Event {
             throw new Exception("Not enough tributes passed to event: #" + id 
                     + ", Phase " + phase.toString() + ", Lethal.");
         }
-        for (int loserNum : losers) {
-            tributes.get(loserNum-1).setDead(true);
-        }
+        for (int loserNum : losers) tributes.get(loserNum-1).setDead(true);
         for (int winnerNum : winners) {
             for (int loserNum : losers) {
                 Tribute loser = tributes.get(loserNum-1);

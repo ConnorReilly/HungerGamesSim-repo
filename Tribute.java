@@ -14,6 +14,7 @@ import java.util.ArrayList;
 public class Tribute {
     public final String name;
     public final boolean isMale;
+    private int district;
     private boolean isDead;
     private final ArrayList<String> kills;
     private final ArrayList<String> killedBy;
@@ -29,11 +30,13 @@ public class Tribute {
         diedOn = null;
     }
     
+    public int getDistrict() { return district; }
     public boolean isDead() { return isDead; }
     public ArrayList<String> getKills() { return kills; }
     public ArrayList<String> getKilledBy() { return killedBy; }
     public GamePeriod getDiedOn() { return diedOn; }
     
+    public void setDistrict(int district) { this.district = district; }
     public void setDead(boolean isDead) { this.isDead = isDead; }
     public void addKill(String name) { kills.add(name); }
     public void addKiller(String name) { killedBy.add(name); }

@@ -77,8 +77,15 @@ public class Hunger_Games_Sim {
                         int i = 0;
                         int size = livingTributes.size();
                         while (!livingTributes.get(i).name.equals(killed.name) && i < size) ++i;
-                        assert (i < size);
-                        deadTributes.add(livingTributes.remove(i));
+                        assert i < size;
+                        livingTributes.remove(i);
+                        deadTributes.add(killed);
+                        i = 0;
+                        size = selectedTributes.size();
+                        while (!selectedTributes.get(i).name.equals(killed.name) && i < size) ++i;
+                        assert i < size;
+                        selectedTributes.get(i).setDead(true);
+                        selectedTributes.get(i).setDiedOn(gp);
                     }
                 }
             }
@@ -86,8 +93,9 @@ public class Hunger_Games_Sim {
             System.out.println();
         }
         if (livingTributes.size() == 1) {
-            System.out.println("The winner of this Hunger Games is "
-                            + livingTributes.get(0).name);
+            Tribute survivor = livingTributes.get(0);
+            System.out.println("The winner of this Hunger Games is " + survivor.name
+                            + " of District " + survivor.getDistrict());
         } else {
             System.out.println("There are no winners. :(");
         }
@@ -190,6 +198,7 @@ public class Hunger_Games_Sim {
             for (int i = 0; i < TRIBUTES_PER_DISTRICT; ++i) {
                 Tribute tribute = allTributes.remove(rand.nextInt(allTributes.size()));
                 System.out.println("- " + tribute.name);
+                tribute.setDistrict(dist);
                 selectedTributes.add(tribute);
                 livingTributes.add(tribute);
             }
