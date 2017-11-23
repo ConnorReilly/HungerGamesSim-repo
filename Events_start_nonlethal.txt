@@ -1,0 +1,107 @@
+#1. (Player1) grabs a shovel.
+Tributes: 1
+Remove
+
+#2. (Player1) grabs a backpack and retreats.
+Tributes: 1
+Remove
+
+#3. (Player1) and (Player2) fight for a bag. (Player1) gives up and retreats.
+Tributes: 2
+Remove
+
+#4. (Player1) and (Player2) fight for a bag. (Player2) gives up and retreats.
+Tributes: 2
+Remove
+
+#5. (Player1) finds a bow, some arrows, and a quiver.
+Tributes: 1
+Remove
+
+#6. (Player1) runs into the cornucopia and hides.
+Tributes: 1
+Remove
+
+#7. (Player1) takes a handful of throwing knives.
+Tributes: 1
+Remove
+
+#8. (Player1) rips a mace out of (Player2)'s hands.
+Tributes: 2
+Remove
+
+#9. (Player1) finds a canteen full of water.
+Tributes: 1
+Remove
+
+#10. (Player1) stays at the cornucopia for resources.
+Tributes: 1
+Remove
+
+#11. (Player1) gathers as much food as (he/she1) can.
+Tributes: 1
+Remove
+
+#12. (Player1) grabs a sword.
+Tributes: 1
+Remove
+
+#13. (Player1) takes a spear from inside the cornucopia.
+Tributes: 1
+Remove
+
+#14. (Player1) finds a bag full of explosives.
+Tributes: 1
+Remove
+
+#15. (Player1) clutches a first aid kit and runs away.
+Tributes: 1
+Remove
+
+#16. (Player1) takes a sickle from inside the cornucopia.
+Tributes: 1
+Remove
+
+#17. (Player1), (Player2), and (Player3) work together to get as many supplies as possible.
+Tributes: 3
+Remove
+
+#18. (Player1) runs away with a lighter and some rope.
+Tributes: 1
+Remove
+
+#19. (Player1) snatches a bottle of alcohol and a rag.
+Tributes: 1
+Remove
+
+#20. (Player1) finds a backpack full of camping equipment.
+Tributes: 1
+Remove
+
+#21. (Player1) grabs a backpack, not realizing it is empty.
+Tributes: 1
+Remove
+
+#22. (Player1) breaks (Player2)'s nose for a basket of bread.
+Tributes: 2
+Remove
+
+#23. (Player1), (Player2), (Player3), and (Player4) share everything they gathered before running.
+Tributes: 4
+Remove
+
+#24. (Player1) retrieves a trident from inside the cornucopia.
+Tributes: 1
+Remove
+
+#25. (Player1) grabs a jar of fishing bait while (Player2) gets fishing gear.
+Tributes: 2
+Remove
+
+#26. (Player1) scares (Player2) away from the cornucopia.
+Tributes: 2
+Remove
+
+#27. (Player1) grabs a shield leaning on the cornucopia.
+Tributes: 1
+Remove

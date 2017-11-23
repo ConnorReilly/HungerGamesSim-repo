@@ -1,0 +1,187 @@
+#1. (Player1) goes hunting.
+Tributes: 1
+Remove
+
+#2. (Player1) injures (himself/herself1).
+Tributes: 1
+Remove
+
+#3. (Player1) explores the arena.
+Tributes: 1
+Remove
+
+#4. (Player1) scares (Player2) off.
+Tributes: 2
+Remove
+
+#5. (Player1) diverts (Player2)'s attention and runs away.
+Tributes: 2
+Remove
+
+#6. (Player1) stalks (Player2).
+Tributes: 2
+Remove
+
+#7. (Player1) fishes.
+Tributes: 1
+Remove
+
+#8. (Player1) camouflauges (himself/herself1) in the bushes.
+Tributes: 1
+Remove
+
+#9. (Player1) steals from (Player2) while (he/she2) isn't looking.
+Tributes: 2
+Remove
+
+#10. (Player1) makes a wooden spear.
+Tributes: 1
+Remove
+
+#11. (Player1) discovers a cave.
+Tributes: 1
+Remove
+
+#12. (Player1) attacks (Player2), but (he/she2) manages to escape.
+Tributes: 2
+Remove
+
+#13. (Player1) chases (Player2).
+Tributes: 2
+Remove
+
+#14. (Player1) runs away from (Player2).
+Tributes: 2
+Remove
+
+#15. (Player1) collects fruit from a tree.
+Tributes: 1
+Remove
+
+#16. (Player1) receives a hatchet from an unknown sponsor.
+Tributes: 1
+Remove
+
+#17. (Player1) receives clean water from an unknown sponsor.
+Tributes: 1
+Remove
+
+#18. (Player1) receives medical supplies from an unknown sponsor.
+Tributes: 1
+Remove
+
+#19. (Player1) receives fresh food from an unknown sponsor.
+Tributes: 1
+Remove
+
+#20. (Player1) searches for a water source.
+Tributes: 1
+Remove
+
+#21. (Player1) defeats (Player2) in a fight, but spares (his/her2) life.
+Tributes: 2
+Remove
+
+#22. (Player1) and (Player2) work together for the day.
+Tributes: 2
+Remove
+
+#23. (Player1) begs for (Player2) to kill (him/her1). (He/She2) refuses, keeping (Player1) alive.
+Tributes: 2
+Remove
+
+#24. (Player1) tries to sleep through the entire day.
+Tributes: 1
+Remove
+
+#25. (Player1), (Player2), (Player3), and (Player4) raid (Player5)'s camp while (he/she5) is hunting.
+Tributes: 5
+Remove
+
+#26. (Player1) constructs a shack.
+Tributes: 1
+Remove
+
+#27. (Player1) overhears (Player2) and (Player3) talking in the distance.
+Tributes: 3
+Remove
+
+#28. (Player1) practices (his/her1) archery.
+Tributes: 1
+Remove
+
+#29. (Player1) thinks about home.
+Tributes: 1
+Remove
+
+#30. (Player1) is pricked by thorns while picking berries.
+Tributes: 1
+Remove
+
+#31. (Player1) tries to spear fish with a trident.
+Tributes: 1
+Remove
+
+#32. (Player1) searches for firewood.
+Tributes: 1
+Remove
+
+#33. (Player1) and (Player2) split up to search for resources.
+Tributes: 2
+Remove
+
+#34. (Player1) picks flowers.
+Tributes: 1
+Remove
+
+#35. (Player1) tends to (Player2)'s wounds.
+Tributes: 2
+Remove
+
+#36. (Player1) sees smoke rising in the distance, but decides not to investigate.
+Tributes: 1
+Remove
+
+#37. (Player1) sprains (his/her1) ankle while running away from (Player2).
+Tributes: 2
+Remove
+
+#38. (Player1) makes a slingshot.
+Tributes: 1
+Remove
+
+#39. (Player1) travels to higher ground.
+Tributes: 1
+Remove
+
+#40. (Player1) discovers a river.
+Tributes: 1
+Remove
+
+#41. (Player1) hunts for other tributes.
+Tributes: 1
+Remove
+
+#42. (Player1) and (Player2) hunt for other tributes.
+Tributes: 2
+Remove
+
+#43. (Player1), (Player2), and (Player3) hunt for other tributes.
+Tributes: 3
+Remove
+
+#44. (Player1), (Player2), (Player3), and (Player4) hunt for other tributes.
+Tributes: 4
+Remove
+
+#45. (Player1), (Player2), (Player3), (Player4), and (Player5) hunt for other tributes.
+Tributes: 5
+Remove
+
+#46. (Player1) receives an explosive from an unknown sponsor.
+Tributes: 1
+Remove
+
+#47. (Player1) questions (his/her1) sanity.
+Tributes: 1
+Remove

@@ -1,0 +1,449 @@
+#1. (Player1) catches (Player2) off guard and kills (him/her2).
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#2. (Player1) throws a knife into (Player2)'s head.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#3. (Player1) begs for (Player2) to kill (him/her1). (He/She2) reluctantly obliges, killing (Player1).
+Tributes: 2
+Killer: Player2
+Killed: Player1
+Remove
+
+#4. (Player1) and (Player2) work together to drown (Player3).
+Tributes: 3
+Killer: Player1, Player2
+Killed: Player3
+Remove
+
+#5. (Player1) strangles (Player2) after engaging in a fist fight.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#6. (Player1) shoots an arrow into (Player2)'s head.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#7. (Player1) bleeds out due to untreated injuries.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#8. (Player1) cannot handle the circumstances and commits suicide.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#9. (Player1) bashes (Player2)'s head against a rock several times.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#10. (Player1) unknowingly eats toxic berries.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#11. (Player1) silently snaps (Player2)'s neck.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#12. (Player1) taints (Player2)'s food, killing (him/her2).
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#13. (Player1) decapitates (Player2) with a sword.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#14. (Player1) dies from an infection.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#15. (Player1) spears (Player2) in the abdomen.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#16. (Player1) sets (Player2) on fire with a molotov.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#17. (Player1) falls into a pit and dies.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#18. (Player1) stabs (Player2) while (his/her2) back is turned.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#19. (Player1) severely injures (Player2), but puts (him/her2) out of (his/her2) misery.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#20. (Player1) severely injures (Player2) and leaves (him/her2) to die.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#21. (Player1) bashes (Player2)'s head in with a mace.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#22. (Player1) attempts to climb a tree, but falls to (his/her1) death.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#23. (Player1) pushes (Player2) off a cliff during a knife fight.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#24. (Player1) throws a knife into (Player2)'s chest.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#25. (Player1)'s trap kills (Player2).
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#26. (Player1) kills (Player2) while (he/she2) is resting.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#27. (Player1) is unable to convince (Player2) to not kill (him/her1).
+Tributes: 2
+Killer: Player2
+Killed: Player1
+Remove
+
+#28. (Player1) convinces (Player2) to not kill (him/her1), only to kill (him/her2) instead.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#29. (Player1) falls into a frozen lake and drowns.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#30. (Player1), (Player2), and (Player3) start fighting, but (Player2) runs away as (Player1) kills (Player3).
+Tributes: 3
+Killer: Player1
+Killed: Player3
+Remove
+
+#31. (Player1) kills (Player2) with (his/her2) own weapon.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#32. (Player1) overpowers (Player2), killing (him/her2).
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#33. (Player1) sets an explosive off, killing (Player2).
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#34. (Player1) sets an explosive off, killing (Player2), and (Player3).
+Tributes: 3
+Killer: Player1
+Killed: Player2, Player3
+Remove
+
+#35. (Player1) sets an explosive off, killing (Player2), (Player3), and (Player4).
+Tributes: 4
+Killer: Player1
+Killed: Player2, Player3, Player4
+Remove
+
+#36. (Player1) sets an explosive off, killing (Player2), (Player3), (Player4) and (Player5).
+Tributes: 5
+Killer: Player1
+Killed: Player2, Player3, Player4, Player5
+Remove
+
+#37. (Player1) kills (Player2) as (he/she2) tries to run.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#38. (Player1) and (Player2) threaten a double suicide. It fails and they die.
+Tributes: 2
+Killer: None
+Killed: Player1, Player2
+Remove
+
+#39. (Player1), (Player2), (Player3), and (Player4) form a suicide pact, killing themselves.
+Tributes: 4
+Killer: None
+Killed: Player1, Player2, Player3, Player4
+Remove
+
+#40. (Player1) dies from hypothermia.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#41. (Player1) dies from hunger.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#42. (Player1) dies from thirst.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#43. (Player1) kills (Player2) with a hatchet.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#44. (Player1) and (Player2) fight (Player3) and (Player4). (Player1) and (Player2) survive.
+Tributes: 4
+Killer: Player1, Player2
+Killed: Player3, Player4
+Remove
+
+#45. (Player1) and (Player2) fight (Player3) and (Player4). (Player3) and (Player4) survive.
+Tributes: 4
+Killer: Player3, Player4
+Killed: Player1, Player2
+Remove
+
+#46. (Player1) dies trying to escape the arena.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#47. (Player1) dies of dysentery.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#48. (Player1) accidentally detonates a land mine while trying to arm it.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#49. (Player1) attacks (Player2), but (Player3) protects (him/her2), killing (Player1).
+Tributes: 3
+Killer: Player3
+Killed: Player1
+Remove
+
+#50. (Player1) ambushes (Player2) and kills (him/her2).
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#51. (Player1) accidentally steps on a landmine.
+Tributes: 1
+Killer: None
+Killed: Player1
+Remove
+
+#52. (Player1) severely slices (Player2) with a sword.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#53. (Player1) strangles (Player2) with a rope.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#54. (Player1) kills (Player2) for (his/her2) supplies.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#55. (Player1) shoots an arrow at (Player2), but misses and kills (Player3) instead.
+Tributes: 3
+Killer: Player1
+Killed: Player3
+Remove
+
+#56. (Player1) shoots a poisonous blow dart into (Player2)'s neck, slowly killing (him/her2).
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#57. (Player1), (Player2), and (Player3) successfully ambush and kill (Player4), (Player5), and (Player6).
+Tributes: 6
+Killer: Player1, Player2, Player3
+Killed: Player4, Player5, Player6
+Remove
+
+#58. (Player1), (Player2), and (Player3) unsuccessfully ambush (Player4), (Player5), and (Player6), who kill them instead.
+Tributes: 6
+Killer: Player4, Player5, Player6
+Killed: Player1, Player2, Player3
+Remove
+
+#59. (Player1) stabs (Player2) with a tree branch.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#60. (Player1) forces (Player2) to kill (Player3) or (Player4). (He/She2) decides to kill (Player3).
+Tributes: 4
+Killer: Player2
+Killed: Player3
+Remove
+
+#61. (Player1) forces (Player2) to kill (Player3) or (Player4). (He/She2) decides to kill (Player4).
+Tributes: 4
+Killer: Player2
+Killed: Player4
+Remove
+
+#62. (Player1) forces (Player2) to kill (Player3) or (Player4). (He/She2) refuses to kill, so (Player1) kills (him/her2) instead.
+Tributes: 4
+Killer: Player1
+Killed: Player2
+Remove
+
+#63. (Player1) poisons (Player2)'s drink, but mistakes it for (his/her1) own and dies.
+Tributes: 2
+Killer: None
+Killed: Player1
+Remove
+
+#64. (Player1) poisons (Player2)'s drink. (He/She2) drinks it and dies.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#65. (Player1) stabs (Player2) in the back with a trident.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#66. (Player1) attempts to climb a tree, but falls on (Player2), killing them both.
+Tributes: 2
+Killer: Player1
+Killed: Player1, Player2
+Remove
+
+#67. (Player1), (Player2), and (Player3) get into a fight. (Player1) triumphantly kills them both.
+Tributes: 3
+Killer: Player1
+Killed: Player2, Player3
+Remove
+
+#68. (Player1), (Player2), and (Player3) get into a fight. (Player2) triumphantly kills them both.
+Tributes: 3
+Killer: Player2
+Killed: Player1, Player3
+Remove
+
+#69. (Player1), (Player2), and (Player3) get into a fight. (Player3) triumphantly kills them both.
+Tributes: 3
+Killer: Player3
+Killed: Player1, Player2
+Remove
+
+#70. (Player1) kills (Player2) with a sickle.
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
+
+#71. (Player1), (Player2), (Player3), (Player4), and (Player5) track down and kill (Player6).
+Tributes: 6
+Killer: Player1, Player2, Player3, Player4, Player5
+Killed: Player6
+Remove
+
+#72. (Player1), (Player2), (Player3), and (Player4) track down and kill (Player5).
+Tributes: 5
+Killer: Player1, Player2, Player3, Player4
+Killed: Player5
+Remove
+
+#73. (Player1), (Player2), and (Player3) track down and kill (Player4).
+Tributes: 4
+Killer: Player1, Player2, Player3
+Killed: Player4
+Remove
+
+#74. (Player1) and (Player2) track down and kill (Player3).
+Tributes: 3
+Killer: Player1, Player2
+Killed: Player3
+Remove
+
+#75. (Player1) tracks down and kills (Player2).
+Tributes: 2
+Killer: Player1
+Killed: Player2
+Remove
