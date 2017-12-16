@@ -73,6 +73,7 @@ public class Hunger_Games_Sim {
                 if (event instanceof Event_Lethal) {
                     Event_Lethal lethalEvent = (Event_Lethal) event;
                     ArrayList<Integer> losers = lethalEvent.getLosers();
+                    ArrayList<Integer> winners = lethalEvent.getWinners();
                     for (int j = 0; j < losers.size(); ++j) {
                         Tribute killed = tributesInvolved.get(losers.get(j)-1);
                         int i = 0;
@@ -82,20 +83,20 @@ public class Hunger_Games_Sim {
                         livingTributes.remove(i);
                         killed.setDead(true);
                         killed.setDiedOn(gp);
+                        for (int winner : winners) {
+                            killed.addKiller(tributesInvolved.get(winner-1).name);
+                        }
                         deadTributes.add(killed);
                         i = 0;
                         size = selectedTributes.size();
                         while (!selectedTributes.get(i).name.equals(killed.name) && i < size) ++i;
                         assert (i < size);
-                        //selectedTributes.get(i).setDead(true);
-                        killed = selectedTributes.remove(i);
-                        killed.setDead(true);
-                        killed.setDiedOn(gp);
+                        selectedTributes.remove(i);
                         selectedTributes.add(i, killed);
-                        //selectedTributes.get(i).setDiedOn(gp);
                     }
                 }
             }
+            System.out.println();
             printTributeStats();
             gp.update(TIME_INTERVAL);
             System.out.println();

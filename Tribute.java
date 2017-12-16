@@ -56,7 +56,20 @@ public class Tribute {
         //System.out.println("Sex: " + ((isMale) ? "Male":"Female"));
         //System.out.println("Dead: " + ((isDead) ? "Yes":"No"));
         str += kills.size() + " kills; ";
-        str += (isDead) ? "died on " + diedOn.getPhase() + " " + diedOn.getDayNum() : "alive";
+        if (isDead) {
+            str += "died on " + diedOn.getPhase() + " " + diedOn.getDayNum();
+            if (killedBy.size() > 0) {
+                str += "; killed by ";
+                for (int i = 0; i < killedBy.size(); ++i) {
+                    str += killedBy.get(i);
+                    if (i != killedBy.size()-1) {
+                        str += ", ";
+                    }
+                }
+            }
+        } else {
+            str += "alive";
+        }
         str += ")";
         return str;
     }
