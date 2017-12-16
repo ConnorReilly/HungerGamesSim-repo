@@ -60,7 +60,9 @@ public final class GamePeriod {
     
     public Phase getPhase() { return phase; }
     public int getDayNum() { return dayNum; }
-    public void dump()
+    
+    @Override
+    public String toString()
     {
         int hour24 = time;
         int hour12;
@@ -76,8 +78,8 @@ public final class GamePeriod {
             phaseTmp = phase; gameStart = "";
         }
         
-        System.out.println(hour12 + ":00" 
+        return hour12 + ":00" 
                     + ((hour24 < 12) ? "am":"pm") + " "
-                    + phaseTmp + " " + dayNum + gameStart);
+                    + phaseTmp + " " + dayNum + gameStart;
     }
 }

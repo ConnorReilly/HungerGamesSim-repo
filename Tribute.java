@@ -49,10 +49,15 @@ public class Tribute {
         }
     }
     
-    public void dump()
+    @Override
+    public String toString()
     {
-        System.out.println(name);
-        System.out.println("Sex: " + ((isMale) ? "Male":"Female"));
-        System.out.println("Dead: " + ((isDead) ? "Yes":"No"));
+        String str = name + " (";
+        //System.out.println("Sex: " + ((isMale) ? "Male":"Female"));
+        //System.out.println("Dead: " + ((isDead) ? "Yes":"No"));
+        str += kills.size() + " kills; ";
+        str += (isDead) ? "died on " + diedOn.getPhase() + " " + diedOn.getDayNum() : "alive";
+        str += ")";
+        return str;
     }
 }

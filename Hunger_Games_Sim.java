@@ -52,7 +52,7 @@ public class Hunger_Games_Sim {
         Random rand = new Random();
         Event event = null;
         while (livingTributes.size() > 1) {
-            gp.dump();
+            System.out.println(gp.toString());
             ArrayList<Tribute> tributesToAct = new ArrayList<>(livingTributes);
             while (!tributesToAct.isEmpty()) {
                 ArrayList<Event> candidateEvents;
@@ -62,7 +62,8 @@ public class Hunger_Games_Sim {
                 } else {
                     candidateEvents = eventMap.get(gp.getPhase());
                 }
-                do { event = candidateEvents.get(rand.nextInt(candidateEvents.size()));
+                do { 
+                    event = candidateEvents.get(rand.nextInt(candidateEvents.size()));
                 } while (event.numTributes > tributesToAct.size());
                 for (int j = 0; j < event.numTributes; ++j) {
                     int tribIdx = rand.nextInt(tributesToAct.size());
@@ -77,18 +78,25 @@ public class Hunger_Games_Sim {
                         int i = 0;
                         int size = livingTributes.size();
                         while (!livingTributes.get(i).name.equals(killed.name) && i < size) ++i;
-                        assert i < size;
+                        assert (i < size);
                         livingTributes.remove(i);
+                        killed.setDead(true);
+                        killed.setDiedOn(gp);
                         deadTributes.add(killed);
                         i = 0;
                         size = selectedTributes.size();
                         while (!selectedTributes.get(i).name.equals(killed.name) && i < size) ++i;
-                        assert i < size;
-                        selectedTributes.get(i).setDead(true);
-                        selectedTributes.get(i).setDiedOn(gp);
+                        assert (i < size);
+                        //selectedTributes.get(i).setDead(true);
+                        killed = selectedTributes.remove(i);
+                        killed.setDead(true);
+                        killed.setDiedOn(gp);
+                        selectedTributes.add(i, killed);
+                        //selectedTributes.get(i).setDiedOn(gp);
                     }
                 }
             }
+            printTributeStats();
             gp.update(TIME_INTERVAL);
             System.out.println();
         }
@@ -206,6 +214,17 @@ public class Hunger_Games_Sim {
         }
     }
     
+    public static void printTributeStats()
+    {
+        for (int i = 0; i < selectedTributes.size(); ++i) {
+            if (i % TRIBUTES_PER_DISTRICT == 0) {
+                if (i != 0) System.out.println();
+                System.out.println("DISTRICT " + (i/TRIBUTES_PER_DISTRICT + 1));
+            }
+            System.out.println("- " + selectedTributes.get(i));
+        }
+    }
+    
     public static void dumpMaps()
     {
         ArrayList<Event> eventList;
@@ -232,7 +251,7 @@ public class Hunger_Games_Sim {
     public static void dumpTributes(ArrayList<Tribute> tribList)
     {
         for (int i = 0; i < tribList.size(); ++i) {
-            tribList.get(i).dump();
+            System.out.println(tribList.get(i));
             System.out.println();
         }
     }
@@ -241,7 +260,7 @@ public class Hunger_Games_Sim {
     {
         for (int i = 0; i < 8; ++i) {
             gp.update(TIME_INTERVAL);
-            gp.dump();
+            System.out.println(gp.toString());
         }
     }
 }
