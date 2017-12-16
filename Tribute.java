@@ -53,8 +53,6 @@ public class Tribute {
     public String toString()
     {
         String str = name + " (";
-        //System.out.println("Sex: " + ((isMale) ? "Male":"Female"));
-        //System.out.println("Dead: " + ((isDead) ? "Yes":"No"));
         str += kills.size() + " kills; ";
         if (isDead) {
             str += "died on " + diedOn.getPhase() + " " + diedOn.getDayNum();

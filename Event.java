@@ -25,7 +25,7 @@ public class Event {
         this.numTributes = numTributes;
     }
     
-    public String execute(ArrayList<Tribute> tributes) throws Exception {
+    public String execute(ArrayList<Tribute> tributes, GamePeriod period) throws Exception {
         if (tributes.size() < numTributes) {
             throw new Exception("Not enough tributes passed to event: #" + id 
                     + ", Phase " + phase.toString() + ", Nonlethal.");

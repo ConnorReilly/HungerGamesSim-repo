@@ -27,20 +27,27 @@ public class Event_Lethal extends Event {
     public ArrayList<Integer> getLosers() { return losers; }
     
     @Override
-    public String execute(ArrayList<Tribute> tributes) throws Exception
+    public String execute(ArrayList<Tribute> tributes, GamePeriod period) throws Exception
     {
         if (tributes.size() < numTributes) {
             throw new Exception("Not enough tributes passed to event: #" + id 
                     + ", Phase " + phase.toString() + ", Lethal.");
         }
-        for (int loserNum : losers) tributes.get(loserNum-1).setDead(true);
-        for (int winnerNum : winners) {
-            for (int loserNum : losers) {
-                Tribute loser = tributes.get(loserNum-1);
-                tributes.get(winnerNum-1).addKill(loser.name);
+        for (int loserNum : losers) {
+            Tribute loser = tributes.get(loserNum-1);
+            loser.setDead(true);
+            loser.setDiedOn(period);
+            for (int winnerNum : winners) {
+                Tribute winner = tributes.get(winnerNum-1);
+                loser.addKiller(winner.name);
+                winner.addKill(loser.name);
+                tributes.remove(winnerNum-1);
+                tributes.add(winnerNum-1, winner);
             }
+            tributes.remove(loserNum-1);
+            tributes.add(loserNum-1, loser);
         }
-        return super.execute(tributes);
+        return super.execute(tributes, period);
     }
     
     @Override

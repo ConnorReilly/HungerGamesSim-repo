@@ -34,20 +34,23 @@ public final class GamePeriod {
     public void update(int addHours)
     {
         int numPhaseChanges = 0;
+        int tmp = addHours;
+        int hoursUntilPhaseChange;
         if (phase == Phase.START) {
             phase = (time % 24 < 19 && time % 24 >= 7) ? Phase.DAY:Phase.NIGHT;
         }
-        int tmp = addHours;
-        int hoursUntilPhaseChange;
         if (phase == Phase.DAY) hoursUntilPhaseChange = 19-time;
         else hoursUntilPhaseChange = (time >= 19) ? 31 - time : 7 - time;
         tmp -= hoursUntilPhaseChange;
         while (tmp >= 0) { ++numPhaseChanges; tmp -= 12; }
         tmp = numPhaseChanges;
-        if (phase == Phase.NIGHT && tmp > 0) { ++dayNum; --tmp; }
+        if (phase == Phase.NIGHT && tmp > 0) {
+            ++dayNum; --tmp;
+        }
         while (tmp > 0) {
-            --tmp;
-            if (tmp > 0) ++dayNum; --tmp;
+            if (--tmp > 0) {
+                ++dayNum; --tmp;
+            }
         }
         if (numPhaseChanges % 2 == 1) {
             phase = (phase == Phase.DAY) ? Phase.NIGHT:Phase.DAY;
@@ -66,16 +69,17 @@ public final class GamePeriod {
     {
         int hour24 = time;
         int hour12;
+        GamePeriod.Phase phaseTmp;
+        String gameStart;
         if (hour24 == 0) hour12 = 12;
         else if (hour24 > 12) hour12 = hour24 - 12;
         else hour12 = hour24;
-        GamePeriod.Phase phaseTmp;
-        String gameStart;
         if (phase == Phase.START) {
             phaseTmp = (time < 19 && time >= 7) ? Phase.DAY:Phase.NIGHT;
             gameStart = " (GAME START)";
         } else { 
-            phaseTmp = phase; gameStart = "";
+            phaseTmp = phase;
+            gameStart = "";
         }
         
         return hour12 + ":00" 
