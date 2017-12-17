@@ -26,6 +26,13 @@ public class Event_Lethal extends Event {
     public ArrayList<Integer> getWinners() { return winners; }
     public ArrayList<Integer> getLosers() { return losers; }
     
+    /**
+     * Execute lethal event; update tribute stats accordingly
+     * @param tributes tributes involved
+     * @param period current game period
+     * @return the event description, after tribute data placeholders have been replaced with actual data
+     * @throws Exception if not enough tributes were passed
+     */
     @Override
     public String execute(ArrayList<Tribute> tributes, GamePeriod period) throws Exception
     {

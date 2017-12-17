@@ -12,10 +12,12 @@ import java.util.ArrayList;
  * @author ConnorReilly
  */
 public class Event {
-    public final GamePeriod.Phase phase;
-    public final int id;
-    public final int numTributes;
-    public final String desc;
+    // Events are uniquely identified by their phase, id, and lethality
+    // This class models non-lethal events; lethal events are a subclass of this one
+    public final GamePeriod.Phase phase;   // Phase during which this event can occur
+    public final int id;   // event ID
+    public final int numTributes;   // number of tributes that this event requires
+    public final String desc;   // event description
     
     Event(GamePeriod.Phase phase, int id, int numTributes, String desc)
     {
@@ -25,6 +27,13 @@ public class Event {
         this.numTributes = numTributes;
     }
     
+    /**
+     * Execute this event
+     * @param tributes the tributes involved
+     * @param period current game period
+     * @return the event description, after tribute data placeholders have been replaced with actual data
+     * @throws Exception if not enough tributes were passed
+     */
     public String execute(ArrayList<Tribute> tributes, GamePeriod period) throws Exception {
         if (tributes.size() < numTributes) {
             throw new Exception("Not enough tributes passed to event: #" + id 
@@ -77,6 +86,9 @@ public class Event {
         return new String(strBuilder);
     }
     
+    /**
+     * Dump event data
+     */
     public void dump() 
     {
         System.out.println("Event " + id + ": (" + phase.toString() + ", non-lethal)");

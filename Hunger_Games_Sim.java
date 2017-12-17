@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
  * @author ConnorReilly
  */
 public class Hunger_Games_Sim {
+    // Names of input data files
     public static final String FILENAME_EVENTS_START_NONLETHAL = "Events_start_nonlethal.txt";
     public static final String FILENAME_EVENTS_START_LETHAL = "Events_start_lethal.txt";
     public static final String FILENAME_EVENTS_DAY_NONLETHAL = "Events_day_nonlethal.txt";
@@ -26,17 +27,21 @@ public class Hunger_Games_Sim {
     public static final String FILENAME_EVENTS_NIGHT_NONLETHAL = "Events_night_nonlethal.txt";
     public static final String FILENAME_EVENTS_NIGHT_LETHAL = "Events_night_lethal.txt";
     public static final String FILENAME_TRIBUTES_LIVING = "Tributes_living.txt";
+    
     public static final int NUM_DISTRICTS = 12;
     public static final int TRIBUTES_PER_DISTRICT = 3;
-    public static final int TIME_INTERVAL = 3;
-    public static final double DEATH_EVENT_PROB = 0.25;
+    public static final int TIME_INTERVAL = 3;   // The number of hours that pass between updates
+    public static final double LETHAL_EVENT_PROB = 0.25;   // Probablility of lethal event'
+    
     private static final TreeMap<GamePeriod.Phase, ArrayList<Event>> eventMap = new TreeMap<>();
     private static final TreeMap<GamePeriod.Phase, ArrayList<Event>> lethalEventMap = new TreeMap<>();
-    private static final ArrayList<Tribute> allTributes = new ArrayList<>();
-    private static final ArrayList<Tribute> selectedTributes = new ArrayList<>();
-    private static final ArrayList<Tribute> livingTributes = new ArrayList<>();
-    private static final ArrayList<Tribute> deadTributes = new ArrayList<>();
-    private static GamePeriod gp = new GamePeriod();
+    
+    private static final ArrayList<Tribute> allTributes = new ArrayList<>();   // All tribute data from parsed input file
+    private static final ArrayList<Tribute> selectedTributes = new ArrayList<>();   // All tributes participating in the current HG
+    private static final ArrayList<Tribute> livingTributes = new ArrayList<>();   // All living tributes in the current HG
+    private static final ArrayList<Tribute> deadTributes = new ArrayList<>();   // All tributes that died in the current HG
+    
+    private static GamePeriod gp = new GamePeriod();   // Day/night number and time
     
     /**
      * @param args the command line arguments
@@ -68,13 +73,19 @@ public class Hunger_Games_Sim {
         }
     }
     
+    /**
+     * Select random event and fill with random tributes
+     * @param tributesToAct the list of tributes to choose from
+     * @return the list of remaining tributes (chosen tributes are removed)
+     * @throws Exception for print failure
+     */
     public static ArrayList<Tribute> executeRandomEvent(ArrayList<Tribute> tributesToAct) throws Exception
     {
         Random rand = new Random();
         Event event = null;
         ArrayList<Event> candidateEvents;
         ArrayList<Tribute> tributesInvolved = new ArrayList<>();
-        if (rand.nextDouble() < DEATH_EVENT_PROB) {
+        if (rand.nextDouble() < LETHAL_EVENT_PROB) {
             candidateEvents = lethalEventMap.get(gp.getPhase());
         } else {
             candidateEvents = eventMap.get(gp.getPhase());
@@ -110,6 +121,10 @@ public class Hunger_Games_Sim {
         return tributesToAct;
     }
     
+    /**
+     * Parse event data and initialize event maps
+     * @throws Exception on parse failure
+     */
     public static void buildEventMaps() throws Exception
     {   
         GamePeriod.Phase phase = GamePeriod.Phase.START;
@@ -123,6 +138,14 @@ public class Hunger_Games_Sim {
         lethalEventMap.put(phase, parseEventData(FILENAME_EVENTS_NIGHT_LETHAL, phase, true));
     }
     
+    /**
+     * Parse all event data in a text file
+     * @param eventFileName file to read event data from
+     * @param phase game phase during which this event can occur
+     * @param lethal whether this event is lethal
+     * @return the list of parsed data
+     * @throws Exception on file read/parse error
+     */
     public static ArrayList<Event> parseEventData(String eventFileName, 
             GamePeriod.Phase phase, boolean lethal) throws Exception
     {
@@ -182,6 +205,10 @@ public class Hunger_Games_Sim {
         return eventList;
     }
     
+    /**
+     * Parse living tribute data
+     * @throws Exception on file read/parse error
+     */
     public static void fetchAllTributes() throws Exception
     {
         InputStream inStream = new FileInputStream(new File(FILENAME_TRIBUTES_LIVING));
@@ -199,6 +226,9 @@ public class Hunger_Games_Sim {
         }
     }
     
+    /**
+     * Randomly select tributes for this hunger games, divided into districts
+     */
     public static void selectTributes()
     {
         Random rand = new Random();
@@ -215,6 +245,9 @@ public class Hunger_Games_Sim {
         }
     }
     
+    /**
+     * Print current stats for all tributes
+     */
     public static void printTributeStats()
     {
         for (int i = 0; i < selectedTributes.size(); ++i) {
@@ -226,6 +259,9 @@ public class Hunger_Games_Sim {
         }
     }
     
+    /**
+     * Dump all event map contents (for debugging)
+     */
     public static void dumpMaps()
     {
         ArrayList<Event> eventList;
@@ -249,6 +285,10 @@ public class Hunger_Games_Sim {
         }
     }
     
+    /**
+     * Dump tribute data
+     * @param tribList list of tribute data to dump
+     */
     public static void dumpTributes(ArrayList<Tribute> tribList)
     {
         for (int i = 0; i < tribList.size(); ++i) {
@@ -257,11 +297,4 @@ public class Hunger_Games_Sim {
         }
     }
     
-    public static void testGP()
-    {
-        for (int i = 0; i < 8; ++i) {
-            gp.update(TIME_INTERVAL);
-            System.out.println(gp.toString());
-        }
-    }
 }

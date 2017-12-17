@@ -12,9 +12,8 @@ package hunger_games_sim;
 public final class GamePeriod {
     public enum Phase { START, DAY, NIGHT };
     public static final int NUM_PHASES = 3;
-    private int time;
-    public int getTime() { return time; }
-    public void setTime(int time) { this.time = time; }
+    
+    private int time;   // Internally modeled in 24 hr time
     private Phase phase;
     private int dayNum;
     
@@ -26,11 +25,28 @@ public final class GamePeriod {
     GamePeriod(Phase phase, int dayNum) {
         this(); this.phase = phase; this.dayNum = dayNum;
     }
-    GamePeriod(Phase phase, int dayNum, int time)
+    GamePeriod(Phase phase, int dayNum, int time) throws Exception
     {
-        this(phase, dayNum); this.time = time;
+        this(phase, dayNum); setTime(time);
     }
     
+    public int getTime() { return time; }
+    
+    /**
+     * Set the time
+     * @param time the new time
+     * @throws Exception if the value passed is not a valid 24 hr time
+     */
+    public void setTime(int time) throws Exception
+    {
+        if (time > 23 || time < 0) throw new Exception("Invalid time: " + time);
+        this.time = time;
+    }
+    
+    /**
+     * Increment time and compute new game period
+     * @param addHours the number of hours to increment by
+     */
     public void update(int addHours)
     {
         int numPhaseChanges = 0;
@@ -59,11 +75,18 @@ public final class GamePeriod {
         time = time % 24;
     }
     
+    /**
+     * Default values
+     */
     public void reset() { phase = Phase.START; dayNum = 1; time = 7; }
     
     public Phase getPhase() { return phase; }
     public int getDayNum() { return dayNum; }
     
+    /**
+     * NOTE: converts time from 24 to 12 hr time with am/pm
+     * @return String representation of this game period
+     */
     @Override
     public String toString()
     {

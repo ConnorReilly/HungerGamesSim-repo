@@ -8,7 +8,7 @@ package hunger_games_sim;
 import java.util.ArrayList;
 
 /**
- *
+ * 
  * @author ConnorReilly
  */
 public class Tribute {
@@ -24,6 +24,7 @@ public class Tribute {
     {
         this.name = name.trim();
         this.isMale = isMale;
+        district = 0;
         isDead = false;
         kills = new ArrayList<>();
         killedBy = new ArrayList<>();
