@@ -26,7 +26,6 @@ public class Hunger_Games_Sim {
     public static final String FILENAME_EVENTS_NIGHT_NONLETHAL = "Events_night_nonlethal.txt";
     public static final String FILENAME_EVENTS_NIGHT_LETHAL = "Events_night_lethal.txt";
     public static final String FILENAME_TRIBUTES_LIVING = "Tributes_living.txt";
-    
     public static final int NUM_DISTRICTS = 12;
     public static final int TRIBUTES_PER_DISTRICT = 3;
     public static final int TIME_INTERVAL = 3;
@@ -49,47 +48,11 @@ public class Hunger_Games_Sim {
         fetchAllTributes();
         selectTributes();
         
-        Random rand = new Random();
-        Event event = null;
         while (livingTributes.size() > 1) {
             System.out.println(gp.toString());
             ArrayList<Tribute> tributesToAct = new ArrayList<>(livingTributes);
             while (!tributesToAct.isEmpty()) {
-                ArrayList<Event> candidateEvents;
-                ArrayList<Tribute> tributesInvolved = new ArrayList<>();
-                if (rand.nextDouble() < DEATH_EVENT_PROB ) {
-                    candidateEvents = lethalEventMap.get(gp.getPhase());
-                } else {
-                    candidateEvents = eventMap.get(gp.getPhase());
-                }
-                do { 
-                    event = candidateEvents.get(rand.nextInt(candidateEvents.size()));
-                } while (event.numTributes > tributesToAct.size());
-                for (int j = 0; j < event.numTributes; ++j) {
-                    int tribIdx = rand.nextInt(tributesToAct.size());
-                    tributesInvolved.add(tributesToAct.remove(tribIdx));
-                }
-                System.out.println(event.execute(tributesInvolved, gp));
-                if (event instanceof Event_Lethal) {
-                    Event_Lethal lethalEvent = (Event_Lethal) event;
-                    ArrayList<Integer> losers = lethalEvent.getLosers();
-                    ArrayList<Integer> winners = lethalEvent.getWinners();
-                    for (int j = 0; j < losers.size(); ++j) {
-                        Tribute killed = tributesInvolved.get(losers.get(j)-1);
-                        int i = 0;
-                        int size = livingTributes.size();
-                        while (!livingTributes.get(i).name.equals(killed.name) && i < size) ++i;
-                        assert (i < size);
-                        livingTributes.remove(i);
-                        deadTributes.add(killed);
-                        i = 0;
-                        size = selectedTributes.size();
-                        while (!selectedTributes.get(i).name.equals(killed.name) && i < size) ++i;
-                        assert (i < size);
-                        selectedTributes.remove(i);
-                        selectedTributes.add(i, killed);
-                    }
-                }
+                tributesToAct = executeRandomEvent(tributesToAct);
             }
             System.out.println();
             printTributeStats();
@@ -103,6 +66,48 @@ public class Hunger_Games_Sim {
         } else {
             System.out.println("There are no winners. :(");
         }
+    }
+    
+    public static ArrayList<Tribute> executeRandomEvent(ArrayList<Tribute> tributesToAct) throws Exception
+    {
+        Random rand = new Random();
+        Event event = null;
+        ArrayList<Event> candidateEvents;
+        ArrayList<Tribute> tributesInvolved = new ArrayList<>();
+        if (rand.nextDouble() < DEATH_EVENT_PROB) {
+            candidateEvents = lethalEventMap.get(gp.getPhase());
+        } else {
+            candidateEvents = eventMap.get(gp.getPhase());
+        }
+        do { 
+            event = candidateEvents.get(rand.nextInt(candidateEvents.size()));
+        } while (event.numTributes > tributesToAct.size());
+        for (int j = 0; j < event.numTributes; ++j) {
+            int tribIdx = rand.nextInt(tributesToAct.size());
+            tributesInvolved.add(tributesToAct.remove(tribIdx));
+        }
+        System.out.println(event.execute(tributesInvolved, gp));
+        if (event instanceof Event_Lethal) {
+            Event_Lethal lethalEvent = (Event_Lethal) event;
+            ArrayList<Integer> losers = lethalEvent.getLosers();
+            ArrayList<Integer> winners = lethalEvent.getWinners();
+            for (int j = 0; j < losers.size(); ++j) {
+                Tribute killed = tributesInvolved.get(losers.get(j)-1);
+                int i = 0;
+                int size = livingTributes.size();
+                while (!livingTributes.get(i).name.equals(killed.name) && i < size) ++i;
+                assert (i < size);
+                livingTributes.remove(i);
+                deadTributes.add(killed);
+                i = 0;
+                size = selectedTributes.size();
+                while (!selectedTributes.get(i).name.equals(killed.name) && i < size) ++i;
+                assert (i < size);
+                selectedTributes.remove(i);
+                selectedTributes.add(i, killed);
+            }
+        }
+        return tributesToAct;
     }
     
     public static void buildEventMaps() throws Exception
